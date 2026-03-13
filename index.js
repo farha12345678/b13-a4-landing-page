@@ -76,7 +76,7 @@ function updateStatus() {
     const rejectCount = rejectedSection.querySelectorAll('.card').length
     totalStat.innerText = allCount
     totalInter.innerText = interCount
-    totalReject.innerText = rejectCounts
+    totalReject.innerText = rejectCount
     let availableCount
     if(currentTab === 'all'){
         availableCount = allCount

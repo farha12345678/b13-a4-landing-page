@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Job Tracker</title>
+    <style type="text/tailwindcss">
+        @theme {
+				--color-clifford: #da373d;
+			}
+		</style>
+</head>
+
+<body class="container mx-auto">
+    <section class="mt-20">
+        <!-- card -->
+        <div class="">
+            <h1 class="text-3xl font-bold">Job Application Tracker</h1>
+            <div class="flex gap-10 mt-10">
+                <div class="card1 p-5 w-80 h-20 bg-slate-100">
+                    <h4 class="text-lg">Total</h4>
+                    <p id="stat-total" class="text-lg font-medium">0</p>
+                </div>
+                <div class="card1 p-5 w-80 h-20 bg-slate-100">
+                    <h4 class="text-lg">Interview</h4>
+                    <p id="stat-inter" class="text-lg font-medium text-green-600">0</p>
+                </div>
+                <div class="card1 p-5 w-80 h-20 bg-slate-100">
+                    <h4 class="text-lg">Rejected</h4>
+                    <p id="stat-reject" class="text-lg font-medium text-red-600">0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        <h1>Available Jobs</h1>
+    </div>
+    <!-- job card -->
+
+    <section class="mt-10">
+
+        <div class="flex justify-between">
+            <div class="flex gap-5">
+                <button id="tab-all" onclick="switchTab('all')" class="border btn p-3">
+                    All
+                </button>
+                <button id="tab-interview" onclick="switchTab('interview')" class="border btn p-3">
+                    Interview
+                </button>
+                <button id="tab-rejected" onclick="switchTab('rejected')" class="border btn p-3">
+                    Rejected
+                </button>
+            </div>
+            <div>
+                <p id="available">8 jobs</p>
+            </div>
+        </div>
+
+    </section>
+    <div id="jobs-sec">
+        <!-- tab-1 -->
+        <section id="all-sec" class="hidden">
+            <div class="flex flex-col gap-5 mt-10">
+                <div class="card w-full bg-base-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="mt-2 flex flex-col ">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h2 class="text-lg font-medium">Mobile First Corp</h2>
+                                    <p>React Native Developer</p>
+                                </div> <button
+                                    class="delete text-base font-medium cursor-pointer rounded-full px-4 py-2 bg-gray-300 "><i
+                                        class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                            </div>
+                            <div class="space-y-2">
+                                <p>Remote . Full Time . $1,30,000 - $1,40,000</p>
+                                <button data-status class="self-start p-1 border rounded-xl text-sm bg-slate-100">
+                                    Not Applied
+                                </button>
+                                <p> Build cross-platform mobile applications using React Native. Work on products used
+                                    by millions of users worldwide. </p>
+                            </div>
+                            <div class="space-x-3"> <button
+                                    class="border-green-600 text-green-600 border p-2 interview"> Interview
+                                </button> <button class="border-red-600 text-red-600 border p-2 rejected"> Rejected
+                                </button> </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-full bg-base-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="mt-2 flex flex-col text-xs">
+                            <div class="flex space-y-2 justify-between">
+                                <div>
+                                    <h2 class="text-lg font-medium">WebFlow Agency</h2>
+                                    <p>Web Designer & Developer</p>
+                                </div>
+                                <button
+                                    class="delete text-base font-medium cursor-pointer rounded-full px-4 py-2 bg-gray-300"><i
+                                        class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p>Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+                                 <button data-status class="self-start p-1 border rounded-xl text-sm bg-slate-100">
+                                    Not Applied
+                                </button>
+                                <p>
+                                    Create stunning web experiences for high-profile clients.
+                                    Must have portfolio and experience with modern web design
+                                    trends.
+                                </p>
+                                <div class="space-x-3">
+                                    <button class="border-green-600 text-green-600 border p-2 interview">
+                                        Interview
+                                    </button>
+                                    <button class="border-red-600 text-red-600 border p-2 rejected">
+                                        Rejected
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-full bg-base-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="mt-2 flex flex-col text-xs">
+                            <div class="flex space-y-2 justify-between">
+                                <div>
+                                    <h2 class="text-lg font-medium">WebFlow Agency</h2>
+                                    <p>Web Designer & Developer</p>
+                                </div>
+                                <button
+                                    class="delete text-base font-medium cursor-pointer rounded-full px-4 py-2 bg-gray-300"><i
+                                        class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p>Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+                                 <button data-status class="self-start p-1 border rounded-xl text-sm bg-slate-100">
+                                    Not Applied
+                                </button>
+                                <p>
+                                    Create stunning web experiences for high-profile clients.
+                                    Must have portfolio and experience with modern web design
+                                    trends.
+                                </p>
+                                <div class="space-x-3">
+                                    <button class="border-green-600 text-green-600 border p-2 interview">
+                                        Interview
+                                    </button>
+                                    <button class="border-red-600 text-red-600 border p-2 rejected">
+                                        Rejected
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- interview section -->
+        <section class="hidden" id="inter-sec">
+            <div>
+                <h1></h1>
+                <p></p>
+            </div>
+        </section>
+        <!-- rejected section -->
+        <section class="hidden" id="reject-sec">
+            <div>
+                <h1></h1>
+            </div>
+        </section>
+    </div>
+    <div id="empty-state" class="hidden flex flex-col items-center justify-center h-64 text-gray-400">
+        <i class="fa-regular fa-file text-8xl mb-4"></i>
+        <h1 class="text-2xl font-semibold">No Jobs Available</h1>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
